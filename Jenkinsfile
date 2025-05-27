@@ -1,6 +1,10 @@
 node {
+    
     stage('Clone repository') {
-        git credentialsId: 'github_access_token', url: 'https://github.com/ppapstructure/web-count.git'
+        git(
+          url: 'https://github.com/ppapstructure/web-count.git',
+          credentialsId: 'github_access_token'
+        )
     }
 
     stage('Build image') {
